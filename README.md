@@ -14,15 +14,11 @@ Powered by newsapi.org.<br>
 Disclaimer:<br>
 This app is in no way affiliated with or responsible for the content published by the included resources.<br>
 All the content, trademarks and logos are the copyright and property of their respective owners.  
-
+<br>
 <img src="screenshots/category_main.png" align="left">
-<br>
 <img src="screenshots/category_1.png" align="left">
-<br>
 <img src="screenshots/details_page.png" align="left">
-<br>
 <img src="screenshots/search_feature.png" align="left">
-<br>
 <img src="screenshots/share_screen.png" align="left">
 
 
