@@ -17,9 +17,13 @@ All the content, trademarks and logos are the copyright and property of their re
 <br>
 <br>
 <img src="screenshots/category_main.png"/>
+<br>
 <img src="screenshots/category_1.png"/>
+<br>
 <img src="screenshots/details_page.png"/>
+<br>
 <img src="screenshots/search_feature.png"/>
+<br>
 <img src="screenshots/share_screen.png"/>
 
 
