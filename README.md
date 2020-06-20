@@ -9,9 +9,10 @@ All the content, trademarks and logos are the copyright and property of their re
 <br>
 • MVVM design pattern.<br>
 •	Retrofit for interacting with RestAPIs, custom requests using OkHttp.<br>
-•	Caching interceptor, connectivity interceptor and network interceptor for limiting the number of network requests.<br> 
+•	Caching interceptor, connectivity interceptor and network interceptor for limiting number of network requests.<br> 
 •	Coroutines for asynchronous programming and threading.<br> 
 •	Tab layout, ViewPager and WebView.<br>
 •	Kodein dependency injection library.<br> 
 <br><br> 
 
+<img src="CoverNews/screenshots/category_main.png">
