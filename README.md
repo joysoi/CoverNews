@@ -19,7 +19,7 @@ This app is in no way affiliated with or responsible for the content published b
 All the content, trademarks and logos are the copyright and property of their respective owners.  
 <br>
 <br>
-Screenshots:
+## Screens
 <br>
 <p align="left">
 <img src="screenshots/category_main.png"/>
