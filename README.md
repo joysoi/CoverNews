@@ -16,7 +16,7 @@ This app is in no way affiliated with or responsible for the content published b
 All the content, trademarks and logos are the copyright and property of their respective owners.  
 <br>
 <br>
-<p align="center">
+<p align="left">
 <img src="screenshots/category_main.png"/>
 <img src="screenshots/category_1.png"/>
 <img src="screenshots/details_page.png"/>
