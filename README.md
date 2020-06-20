@@ -11,8 +11,8 @@ Powered by newsapi.org.<br>
 •	Tab layout, ViewPager and WebView.<br>
 •	Kodein dependency injection library.<br> 
 <br>
-<img src="screenshots/category_main.png">
-<img src="screenshots/category_1.png">
+<img src="screenshots/category_main.png" align="left">
+<img src="screenshots/category_1.png" align="left">
 
 
 
