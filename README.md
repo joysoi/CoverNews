@@ -20,7 +20,7 @@ All the content, trademarks and logos are the copyright and property of their re
 <img src="screenshots/category_1.png" align="left"/>
 <img src="screenshots/details_page.png" align="left"/>
 <img src="screenshots/search_feature.png" align="bottom"/>
-<img src="screenshots/share_screen.png" align="bottom"/>
+<img src="screenshots/share_screen.png" align="left"/>
 
 
 
