@@ -15,4 +15,4 @@ All the content, trademarks and logos are the copyright and property of their re
 •	Kodein dependency injection library.<br> 
 <br><br> 
 
-<img src="CoverNews/screenshots/category_main.png">
+<img src="screenshots/category_main.png">
