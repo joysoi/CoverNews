@@ -16,11 +16,11 @@ This app is in no way affiliated with or responsible for the content published b
 All the content, trademarks and logos are the copyright and property of their respective owners.  
 <br>
 <br>
-<img src="screenshots/category_main.png" align="left"/>
-<img src="screenshots/category_1.png" align="left"/>
-<img src="screenshots/details_page.png" align="left"/>
-<img src="screenshots/search_feature.png" align="left"/>
-<img src="screenshots/share_screen.png" align="bottom"/>
+<img src="screenshots/category_main.png"/>
+<img src="screenshots/category_1.png"/>
+<img src="screenshots/details_page.png"/>
+<img src="screenshots/search_feature.png"/>
+<img src="screenshots/share_screen.png"/>
 
 
 
