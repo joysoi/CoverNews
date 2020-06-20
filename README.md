@@ -5,7 +5,7 @@ Application for getting and searching news!
 Slide through popular categories provided for particular interests like Science, Sports, Business, Travel and more.<br>
 Powered by newsapi.org.<br>
 <br>
-# Usage:
+Usage:
 <br>
 • MVVM design pattern.<br>
 •	Retrofit for interacting with RestAPIs, custom requests using OkHttp.<br>
@@ -19,7 +19,7 @@ This app is in no way affiliated with or responsible for the content published b
 All the content, trademarks and logos are the copyright and property of their respective owners.  
 <br>
 <br>
-# Screenshots:
+Screenshots:
 <br>
 <p align="left">
 <img src="screenshots/category_main.png"/>
