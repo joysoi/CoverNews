@@ -6,6 +6,7 @@ Slide through popular categories provided for particular interests like Science,
 Powered by newsapi.org.<br>
 <br>
 # Usage:
+<br>
 • MVVM design pattern.<br>
 •	Retrofit for interacting with RestAPIs, custom requests using OkHttp.<br>
 •	Caching interceptor, connectivity interceptor and network interceptor for limiting number of network requests.<br> 
