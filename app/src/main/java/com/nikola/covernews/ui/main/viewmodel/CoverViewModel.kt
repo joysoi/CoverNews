@@ -5,6 +5,7 @@ import com.nikola.covernews.data.network.NewsApiResponseService
 import com.nikola.covernews.data.network.response.TopHeadlinesResponse
 import com.nikola.covernews.internal.*
 import kotlinx.coroutines.*
+import retrofit2.Response
 
 class CoverViewModel(
     private val newsApiResponseService: NewsApiResponseService
@@ -49,29 +50,7 @@ class CoverViewModel(
                                 _newsLiveData.postValue(it)
                             }
                         } else {
-                            when (topHeadlines.code()) {
-                                403 -> {
-                                    isErrorLiveData.postValue("Resource Forbidden")
-                                }
-                                404 -> {
-                                    isErrorLiveData.postValue("Server not found")
-                                }
-                                500 -> {
-                                    isErrorLiveData.postValue("Internal Server Error")
-                                }
-                                502 -> {
-                                    isErrorLiveData.postValue("Bad Gateway")
-                                }
-                                301 -> {
-                                    isErrorLiveData.postValue("Resource Removed")
-                                }
-                                302 -> {
-                                    isErrorLiveData.postValue("Removed Resource Found")
-                                }
-                                else -> {
-                                    isErrorLiveData.postValue("Network Error")
-                                }
-                            }
+                            networkResponseCodes(topHeadlines)
                         }
                     }
                     result.await()
@@ -104,29 +83,7 @@ class CoverViewModel(
                             }
 
                         } else {
-                            when (topHeadlines.code()) {
-                                403 -> {
-                                    isErrorLiveData.postValue("Resource Forbidden")
-                                }
-                                404 -> {
-                                    isErrorLiveData.postValue("Server not found")
-                                }
-                                500 -> {
-                                    isErrorLiveData.postValue("Internal Server Error")
-                                }
-                                502 -> {
-                                    isErrorLiveData.postValue("Bad Gateway")
-                                }
-                                301 -> {
-                                    isErrorLiveData.postValue("Resource Removed")
-                                }
-                                302 -> {
-                                    isErrorLiveData.postValue("Removed Resource Found")
-                                }
-                                else -> {
-                                    isErrorLiveData.postValue("Network Error")
-                                }
-                            }
+                            networkResponseCodes(topHeadlines)
                         }
                     }
                     result.await()
@@ -137,6 +94,32 @@ class CoverViewModel(
                 isErrorLiveData.value = "No internet connection"
             } finally {
                 isLoadingLiveData.value = false
+            }
+        }
+    }
+
+    private fun networkResponseCodes(topHeadlines: Response<TopHeadlinesResponse>) {
+        when (topHeadlines.code()) {
+            403 -> {
+                isErrorLiveData.postValue("Resource Forbidden")
+            }
+            404 -> {
+                isErrorLiveData.postValue("Server not found")
+            }
+            500 -> {
+                isErrorLiveData.postValue("Internal Server Error")
+            }
+            502 -> {
+                isErrorLiveData.postValue("Bad Gateway")
+            }
+            301 -> {
+                isErrorLiveData.postValue("Resource Removed")
+            }
+            302 -> {
+                isErrorLiveData.postValue("Removed Resource Found")
+            }
+            else -> {
+                isErrorLiveData.postValue("Network Error")
             }
         }
     }
