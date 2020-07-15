@@ -1,0 +1,286 @@
+package com.nikola.covernews.ui.main.viewmodel
+
+import androidx.lifecycle.*
+import com.nikola.covernews.data.network.NewsApiResponseService
+import com.nikola.covernews.data.network.response.TopHeadlinesResponse
+import com.nikola.covernews.internal.*
+import kotlinx.coroutines.*
+import retrofit2.Response
+
+class SharedViewModel(
+    private val newsApiResponseService: NewsApiResponseService
+) : ViewModel() {
+
+    private lateinit var isLoadingLiveData: MutableLiveData<Boolean>
+
+    fun isLoading(): LiveData<Boolean> {
+        if (!::isLoadingLiveData.isInitialized) {
+            isLoadingLiveData = MutableLiveData()
+            isLoadingLiveData.value = true
+        }
+        return isLoadingLiveData
+    }
+
+    private lateinit var isErrorLiveData: MutableLiveData<String>
+
+    fun isError(): LiveData<String> {
+        if (!::isErrorLiveData.isInitialized) {
+            isErrorLiveData = MutableLiveData()
+        }
+        return isErrorLiveData
+    }
+
+    private val _categoryLiveData = MutableLiveData<TopHeadlinesResponse>()
+    val categoryLiveData: LiveData<TopHeadlinesResponse>
+        get() = _categoryLiveData
+
+    fun scienceCategory() {
+        viewModelScope.launch {
+            try {
+                isLoadingLiveData.value = true
+                withTimeout(10000) {
+                    val result by lazyDeferred {
+                        val topHeadlines = newsApiResponseService.getCategories(
+                            "science",
+                            getLanguage(),
+                            setPeriodDate(),
+                            setPublishedDate()
+                        )
+                        if (topHeadlines.isSuccessful) {
+                            topHeadlines.body()?.let {
+                                _categoryLiveData.postValue(it)
+                            }
+                        } else {
+                            networkResponseCodes(topHeadlines)
+                        }
+                    }
+                    result.await()
+                }
+            } catch (e: CancellationException) {
+                isErrorLiveData.value = "Connection timed out"
+            } catch (e: NoConnectionException) {
+                isErrorLiveData.value = "No internet connection"
+            } finally {
+                isLoadingLiveData.value = false
+            }
+        }
+    }
+
+    fun sportsCategory() {
+        viewModelScope.launch {
+            try {
+                isLoadingLiveData.value = true
+                withTimeout(10000) {
+                    val result by lazyDeferred {
+                        val topHeadlines = newsApiResponseService.getCategories(
+                            "sport",
+                            getLanguage(),
+                            setPeriodDate(),
+                            setPublishedDate()
+                        )
+                        if (topHeadlines.isSuccessful) {
+                            topHeadlines.body()?.let {
+                                _categoryLiveData.postValue(it)
+                            }
+                        } else {
+                            networkResponseCodes(topHeadlines)
+                        }
+                    }
+                    result.await()
+                }
+            } catch (e: CancellationException) {
+                isErrorLiveData.value = "Connection timed out"
+            } catch (e: NoConnectionException) {
+                isErrorLiveData.value = "No internet connection"
+            } finally {
+                isLoadingLiveData.value = false
+            }
+        }
+    }
+
+    fun businessCategory() {
+        viewModelScope.launch {
+            try {
+                isLoadingLiveData.value = true
+                withTimeout(10000) {
+                    val result by lazyDeferred {
+                        val topHeadlines = newsApiResponseService.getCategories(
+                            "business",
+                            getLanguage(),
+                            setPeriodDate(),
+                            setPublishedDate()
+                        )
+                        if (topHeadlines.isSuccessful) {
+                            topHeadlines.body()?.let {
+                                _categoryLiveData.postValue(it)
+                            }
+                        } else {
+                            networkResponseCodes(topHeadlines)
+                        }
+                    }
+                    result.await()
+                }
+            } catch (e: CancellationException) {
+                isErrorLiveData.value = "Connection timed out"
+            } catch (e: NoConnectionException) {
+                isErrorLiveData.value = "No internet connection"
+            } finally {
+                isLoadingLiveData.value = false
+            }
+        }
+    }
+
+    fun educationCategory() {
+        viewModelScope.launch {
+            try {
+                isLoadingLiveData.value = true
+                withTimeout(10000) {
+                    val result by lazyDeferred {
+                        val topHeadlines = newsApiResponseService.getCategories(
+                            "education",
+                            getLanguage(),
+                            setPeriodDate(),
+                            setPublishedDate()
+                        )
+                        if (topHeadlines.isSuccessful) {
+                            topHeadlines.body()?.let {
+                                _categoryLiveData.postValue(it)
+                            }
+                        } else {
+                            networkResponseCodes(topHeadlines)
+                        }
+                    }
+                    result.await()
+                }
+            } catch (e: CancellationException) {
+                isErrorLiveData.value = "Connection timed out"
+            } catch (e: NoConnectionException) {
+                isErrorLiveData.value = "No internet connection"
+            } finally {
+                isLoadingLiveData.value = false
+            }
+        }
+    }
+
+    fun healthCategory() {
+        viewModelScope.launch {
+            try {
+                isLoadingLiveData.value = true
+                withTimeout(10000) {
+                    val result by lazyDeferred {
+                        val topHeadlines = newsApiResponseService.getCategories(
+                            "health",
+                            getLanguage(),
+                            setPeriodDate(),
+                            setPublishedDate()
+                        )
+                        if (topHeadlines.isSuccessful) {
+                            topHeadlines.body()?.let {
+                                _categoryLiveData.postValue(it)
+                            }
+                        } else {
+                            networkResponseCodes(topHeadlines)
+                        }
+                    }
+                    result.await()
+                }
+            } catch (e: CancellationException) {
+                isErrorLiveData.value = "Connection timed out"
+            } catch (e: NoConnectionException) {
+                isErrorLiveData.value = "No internet connection"
+            } finally {
+                isLoadingLiveData.value = false
+            }
+        }
+    }
+
+    fun technologyCategory() {
+        viewModelScope.launch {
+            try {
+                isLoadingLiveData.value = true
+                withTimeout(10000) {
+                    val result by lazyDeferred {
+                        val topHeadlines = newsApiResponseService.getCategories(
+                            "technology",
+                            getLanguage(),
+                            setPeriodDate(),
+                            setPublishedDate()
+                        )
+                        if (topHeadlines.isSuccessful) {
+                            topHeadlines.body()?.let {
+                                _categoryLiveData.postValue(it)
+                            }
+                        } else {
+                            networkResponseCodes(topHeadlines)
+                        }
+                    }
+                    result.await()
+                }
+            } catch (e: CancellationException) {
+                isErrorLiveData.value = "Connection timed out"
+            } catch (e: NoConnectionException) {
+                isErrorLiveData.value = "No internet connection"
+            } finally {
+                isLoadingLiveData.value = false
+            }
+        }
+    }
+
+    fun travelCategory() {
+        viewModelScope.launch {
+            try {
+                isLoadingLiveData.value = true
+                withTimeout(10000) {
+                    val result by lazyDeferred {
+                        val topHeadlines = newsApiResponseService.getCategories(
+                            "travel",
+                            getLanguage(),
+                            setPeriodDate(),
+                            setPublishedDate()
+                        )
+                        if (topHeadlines.isSuccessful) {
+                            topHeadlines.body()?.let {
+                                _categoryLiveData.postValue(it)
+                            }
+                        } else {
+                            networkResponseCodes(topHeadlines)
+                        }
+                    }
+                    result.await()
+                }
+            } catch (e: CancellationException) {
+                isErrorLiveData.value = "Connection timed out"
+            } catch (e: NoConnectionException) {
+                isErrorLiveData.value = "No internet connection"
+            } finally {
+                isLoadingLiveData.value = false
+            }
+        }
+    }
+
+    private fun networkResponseCodes(topHeadlines: Response<TopHeadlinesResponse>) {
+        when (topHeadlines.code()) {
+            403 -> {
+                isErrorLiveData.postValue("Resource Forbidden")
+            }
+            404 -> {
+                isErrorLiveData.postValue("Server not found")
+            }
+            500 -> {
+                isErrorLiveData.postValue("Internal Server Error")
+            }
+            502 -> {
+                isErrorLiveData.postValue("Bad Gateway")
+            }
+            301 -> {
+                isErrorLiveData.postValue("Resource Removed")
+            }
+            302 -> {
+                isErrorLiveData.postValue("Removed Resource Found")
+            }
+            else -> {
+                isErrorLiveData.postValue("Network Error")
+            }
+        }
+    }
+}
