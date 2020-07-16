@@ -11,7 +11,6 @@ import com.nikola.covernews.data.network.NewsApiResponseService
 class CoverViewModelFactory(
     private val newsApiResponseService: NewsApiResponseService
 ) : ViewModelProvider.NewInstanceFactory() {
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return CoverViewModel(newsApiResponseService) as T
     }

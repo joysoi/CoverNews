@@ -7,10 +7,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.nikola.covernews.data.network.NewsApiResponseService
 
+@Suppress("UNCHECKED_CAST")
 class SharedViewModelFactory(
     private val newsApiResponseService: NewsApiResponseService
 ): ViewModelProvider.NewInstanceFactory(){
-    @RequiresApi(Build.VERSION_CODES.O)
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return SharedViewModel(newsApiResponseService) as T
     }
