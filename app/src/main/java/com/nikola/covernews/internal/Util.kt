@@ -1,9 +1,8 @@
-
 package com.nikola.covernews.internal
+
 
 import android.util.Log
 import org.ocpsoft.prettytime.PrettyTime
-import org.threeten.bp.LocalDateTime
 import org.threeten.bp.ZonedDateTime
 import org.threeten.bp.format.DateTimeFormatter
 import java.lang.String.valueOf
@@ -29,11 +28,9 @@ fun dateToTime(oldString: String?): String? {
     return isTime
 }
 
-
-fun setPublishedDate(): String {
-    val current = LocalDateTime.now()
-    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'")
-    return current.format(formatter)
+fun setPublishedDate(): String{
+    val current = ZonedDateTime.now()
+    return current.format(DateTimeFormatter.ISO_DATE)
 }
 
 fun setPeriodDate(): String{

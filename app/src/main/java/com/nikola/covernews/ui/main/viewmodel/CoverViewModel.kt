@@ -38,7 +38,7 @@ class CoverViewModel(
         viewModelScope.launch {
             try {
                 isLoadingLiveData.value = true
-                withTimeout(10000) {
+                withTimeout(5000) {
                     val result by lazyDeferred {
                         val topHeadlines = newsApiResponseService.getTopHeadlines(
                             getCountry(),
@@ -69,7 +69,7 @@ class CoverViewModel(
         viewModelScope.launch {
             try {
                 isLoadingLiveData.value = true
-                withTimeout(10000) {
+                withTimeout(5000) {
                     val result by lazyDeferred {
                         val topHeadlines = newsApiResponseService.getSearchResults(
                             keyword,

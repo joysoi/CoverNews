@@ -38,7 +38,7 @@ class SharedViewModel(
         viewModelScope.launch {
             try {
                 isLoadingLiveData.value = true
-                withTimeout(10000) {
+                withTimeout(5000) {
                     val result by lazyDeferred {
                         val topHeadlines = newsApiResponseService.getCategories(
                             "science",
@@ -70,7 +70,7 @@ class SharedViewModel(
         viewModelScope.launch {
             try {
                 isLoadingLiveData.value = true
-                withTimeout(10000) {
+                withTimeout(5000) {
                     val result by lazyDeferred {
                         val topHeadlines = newsApiResponseService.getCategories(
                             "sport",
@@ -102,7 +102,7 @@ class SharedViewModel(
         viewModelScope.launch {
             try {
                 isLoadingLiveData.value = true
-                withTimeout(10000) {
+                withTimeout(5000) {
                     val result by lazyDeferred {
                         val topHeadlines = newsApiResponseService.getCategories(
                             "business",
@@ -134,7 +134,7 @@ class SharedViewModel(
         viewModelScope.launch {
             try {
                 isLoadingLiveData.value = true
-                withTimeout(10000) {
+                withTimeout(5000) {
                     val result by lazyDeferred {
                         val topHeadlines = newsApiResponseService.getCategories(
                             "education",
@@ -166,7 +166,7 @@ class SharedViewModel(
         viewModelScope.launch {
             try {
                 isLoadingLiveData.value = true
-                withTimeout(10000) {
+                withTimeout(5000) {
                     val result by lazyDeferred {
                         val topHeadlines = newsApiResponseService.getCategories(
                             "health",
@@ -198,7 +198,7 @@ class SharedViewModel(
         viewModelScope.launch {
             try {
                 isLoadingLiveData.value = true
-                withTimeout(10000) {
+                withTimeout(5000) {
                     val result by lazyDeferred {
                         val topHeadlines = newsApiResponseService.getCategories(
                             "technology",
@@ -230,7 +230,7 @@ class SharedViewModel(
         viewModelScope.launch {
             try {
                 isLoadingLiveData.value = true
-                withTimeout(10000) {
+                withTimeout(5000) {
                     val result by lazyDeferred {
                         val topHeadlines = newsApiResponseService.getCategories(
                             "travel",
