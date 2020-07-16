@@ -28,9 +28,7 @@ class SharedViewModelTest : TestCase(){
     private lateinit var isErrorLiveData: LiveData<String>
 
     private val topHeadlinesResponse = TopHeadlinesResponse(
-        status = "ok",
-        totalResults = 15,
-        articles = listOf()
+        totalResults = 15
     )
 
     private val newsLiveData: MutableLiveData<TopHeadlinesResponse> = MutableLiveData()
@@ -46,8 +44,8 @@ class SharedViewModelTest : TestCase(){
     public override fun setUp() {
 
         runBlocking {
-            Mockito.`when`(topHeadlinesResponse)
-                .thenReturn(newsLiveData.value)
+            Mockito.`when`(topHeadlinesResponse.totalResults)
+                .thenReturn(newsLiveData.value?.totalResults)
         }
 
         viewModel = SharedViewModel(newsApiResponseService)

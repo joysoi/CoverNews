@@ -29,9 +29,7 @@ class CoverViewModelTest : TestCase() {
     private lateinit var isErrorLiveData: LiveData<String>
 
     private val topHeadlinesResponse = TopHeadlinesResponse(
-        status = "ok",
-        totalResults = 15,
-        articles = listOf()
+        totalResults = 15
     )
 
     private val newsLiveData: MutableLiveData<TopHeadlinesResponse> = MutableLiveData()
@@ -47,8 +45,8 @@ class CoverViewModelTest : TestCase() {
     public override fun setUp() {
 
         runBlocking {
-            `when`(topHeadlinesResponse)
-                .thenReturn(newsLiveData.value)
+            `when`(topHeadlinesResponse.totalResults)
+                .thenReturn(newsLiveData.value?.totalResults)
         }
 
         viewModel = CoverViewModel(newsApiResponseService)
@@ -71,7 +69,7 @@ class CoverViewModelTest : TestCase() {
     }
 
     @Test
-    fun `isError is true when Response throws exception`() = runBlocking {
+    fun `isError true when Response throws exception`() = runBlocking {
         var isLoading = isLoadingLiveData.value
         Assert.assertNotNull(isLoading)
         isLoading?.let { Assert.assertTrue(it) }
