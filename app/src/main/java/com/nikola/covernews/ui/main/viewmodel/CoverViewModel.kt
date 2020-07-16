@@ -50,7 +50,7 @@ class CoverViewModel(
                                 _newsLiveData.postValue(it)
                             }
                         } else {
-                            networkResponseCodes(topHeadlines)
+                            networkResponseCode(topHeadlines)
                         }
                     }
                     result.await()
@@ -83,7 +83,7 @@ class CoverViewModel(
                             }
 
                         } else {
-                            networkResponseCodes(topHeadlines)
+                            networkResponseCode(topHeadlines)
                         }
                     }
                     result.await()
@@ -98,7 +98,7 @@ class CoverViewModel(
         }
     }
 
-    private fun networkResponseCodes(topHeadlines: Response<TopHeadlinesResponse>) {
+    private fun networkResponseCode(topHeadlines: Response<TopHeadlinesResponse>) {
         when (topHeadlines.code()) {
             403 -> {
                 isErrorLiveData.postValue("Resource Forbidden")

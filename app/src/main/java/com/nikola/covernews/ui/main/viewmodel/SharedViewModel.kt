@@ -51,7 +51,7 @@ class SharedViewModel(
                                 _categoryLiveData.postValue(it)
                             }
                         } else {
-                            networkResponseCodes(topHeadlines)
+                            networkResponseCode(topHeadlines)
                         }
                     }
                     result.await()
@@ -83,7 +83,7 @@ class SharedViewModel(
                                 _categoryLiveData.postValue(it)
                             }
                         } else {
-                            networkResponseCodes(topHeadlines)
+                            networkResponseCode(topHeadlines)
                         }
                     }
                     result.await()
@@ -115,7 +115,7 @@ class SharedViewModel(
                                 _categoryLiveData.postValue(it)
                             }
                         } else {
-                            networkResponseCodes(topHeadlines)
+                            networkResponseCode(topHeadlines)
                         }
                     }
                     result.await()
@@ -147,7 +147,7 @@ class SharedViewModel(
                                 _categoryLiveData.postValue(it)
                             }
                         } else {
-                            networkResponseCodes(topHeadlines)
+                            networkResponseCode(topHeadlines)
                         }
                     }
                     result.await()
@@ -179,7 +179,7 @@ class SharedViewModel(
                                 _categoryLiveData.postValue(it)
                             }
                         } else {
-                            networkResponseCodes(topHeadlines)
+                            networkResponseCode(topHeadlines)
                         }
                     }
                     result.await()
@@ -211,7 +211,7 @@ class SharedViewModel(
                                 _categoryLiveData.postValue(it)
                             }
                         } else {
-                            networkResponseCodes(topHeadlines)
+                            networkResponseCode(topHeadlines)
                         }
                     }
                     result.await()
@@ -243,7 +243,7 @@ class SharedViewModel(
                                 _categoryLiveData.postValue(it)
                             }
                         } else {
-                            networkResponseCodes(topHeadlines)
+                            networkResponseCode(topHeadlines)
                         }
                     }
                     result.await()
@@ -258,7 +258,7 @@ class SharedViewModel(
         }
     }
 
-    private fun networkResponseCodes(topHeadlines: Response<TopHeadlinesResponse>) {
+    private fun networkResponseCode(topHeadlines: Response<TopHeadlinesResponse>) {
         when (topHeadlines.code()) {
             403 -> {
                 isErrorLiveData.postValue("Resource Forbidden")

@@ -15,7 +15,7 @@ import retrofit2.http.Query
 import java.util.concurrent.TimeUnit
 
 const val BASE_URL = "https://newsapi.org/v2/"
-const val API_KEY = "c00c6fbe345a4f5eb8f382924ec62cca"
+const val API_KEY = ""
 
 interface NewsApiResponseService {
 
