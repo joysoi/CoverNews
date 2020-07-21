@@ -8,7 +8,7 @@ Powered by newsapi.org.<br>
 Used:
 <br>
 • MVVM design pattern.<br>
-•	Retrofit for interacting with RestAPIs.<br>
+•	Retrofit for interacting with REST APIs.<br>
 •	Caching interceptor, connectivity interceptor and network interceptor for limiting number of network requests.<br> 
 •	Coroutines for asynchronous programming and threading.<br> 
 •	Tab layout, ViewPager and WebView.<br>
