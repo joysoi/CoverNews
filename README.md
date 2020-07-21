@@ -13,6 +13,7 @@ Used:
 •	Coroutines for asynchronous programming and threading.<br> 
 •	Tab layout, ViewPager and WebView.<br>
 •	Kodein dependency injection library.<br> 
+•	JUnit and Mockito.<br> 
 <br>
 <br>
 Screens:
