@@ -27,7 +27,7 @@ import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.closestKodein
 import org.kodein.di.generic.instance
 
-class BusinessFragment : Fragment(), KodeinAware,
+class NewsFragment : Fragment(), KodeinAware,
     SwipeRefreshLayout.OnRefreshListener {
 
     override val kodein by closestKodein()
@@ -39,7 +39,7 @@ class BusinessFragment : Fragment(), KodeinAware,
 
     companion object {
         @JvmStatic
-        fun newInstance(bundle: Bundle?): BusinessFragment = BusinessFragment().apply {
+        fun newInstance(bundle: Bundle?): NewsFragment = NewsFragment().apply {
             arguments = bundle
         }
     }
@@ -90,7 +90,7 @@ class BusinessFragment : Fragment(), KodeinAware,
         }
 
         recyclerViewNews.apply {
-            layoutManager = LinearLayoutManager(this@BusinessFragment.context)
+            layoutManager = LinearLayoutManager(this@NewsFragment.context)
             adapter = groupAdapter
         }
 

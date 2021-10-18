@@ -21,7 +21,7 @@ class PagerAdapter(fm: FragmentManager) : FragmentPagerAdapter(
             else -> {
                 val bundle = Bundle()
                 bundle.putInt(CATEGORY, position)
-                BusinessFragment.newInstance(bundle)
+                NewsFragment.newInstance(bundle)
             }
         }
     }
