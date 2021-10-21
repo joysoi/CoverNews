@@ -15,4 +15,5 @@
     //toolbar and tab-items colors
     <color name="yellow">#ECC448</color>
     <color name="yellow_darker">#E8B720</color>
+    <color name="blue_link">#2196F3</color>
 </resources>
