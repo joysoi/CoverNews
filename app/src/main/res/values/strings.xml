@@ -16,6 +16,6 @@
     <string name="source_string_arg">SourceString</string>
     <string name="invalid_search_msg">Invalid search! Please try again!</string>
     <string name="disclosure_msg">News and articles from all over the Internet!
-Provided by https://newsapi.org/</string>
-
+        Provided by
+        <a href="https://newsapi.org/">newsapi.org</a></string>
 </resources>

@@ -2,14 +2,17 @@ package com.nikola.covernews.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.content.res.AppCompatResources
-import androidx.viewpager.widget.ViewPager
 import com.nikola.covernews.R
 import com.nikola.covernews.data.adapter.PagerAdapter
-import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_main.*
+import android.text.SpannableString
+import android.text.method.LinkMovementMethod
+import android.text.util.Linkify
+import android.view.LayoutInflater
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
 
 class MainActivity : AppCompatActivity() {
 
@@ -38,10 +41,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showInfoMessage() {
-        val builder = MaterialAlertDialogBuilder(this)
+        val builder: AlertDialog.Builder = AlertDialog.Builder(this)
         builder.setTitle(getString(R.string.app_name))
-            .setMessage(getString(R.string.disclosure_msg))
-            .show()
+        val inflater = this.getSystemService(LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val layout = inflater.inflate(R.layout.custom_alert_dialog_layout, null)
+        val text = layout.findViewById<TextView>(R.id.alertTextView)
+        val s = SpannableString(getString(R.string.disclosure_msg))
+        Linkify.addLinks(s, Linkify.ALL)
+        text.text = s
+        text.movementMethod = LinkMovementMethod.getInstance()
+        builder.setView(layout)
+        builder.show()
     }
 
     private fun initPagerAdapter() {
